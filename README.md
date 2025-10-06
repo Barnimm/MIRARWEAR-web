@@ -1,6 +1,6 @@
 # Mirar Wear - Clothing E-commerce Store
 
-## LINK: 
+## LINK: place to the future link
 ## ✨ Features
 
 ### 🔐 Authentication System
