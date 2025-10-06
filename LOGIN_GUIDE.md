@@ -1,72 +1,100 @@
-# 🔐 Руководство по входу в систему
+# 🔐 Login System Guide
 
-## 🚀 Как войти в систему
+## 🚀 How to Login
 
-### Для обычных пользователей:
-1. Откройте `index.html`
-2. Нажмите кнопку **"Войти"** в меню
-3. Введите ваш email и пароль
-4. Нажмите **"Войти"**
-5. Вы увидите свое имя в меню и кнопку **"Выйти"**
+### For Regular Users:
+1. Open `index.html`
+2. Click the **"Login"** button in the menu
+3. Enter your email and password
+4. Click **"Login"**
+5. You'll see your name in the menu and a **"Logout"** button
 
-### Для администраторов:
-1. Откройте `index.html`
-2. Нажмите кнопку **"Войти"** в меню
-3. Введите email и пароль администратора
-4. Нажмите **"Войти"**
-5. Система автоматически определит, что вы админ
-6. В меню появится кнопка **"Админ-панель"**
-7. Нажмите **"Админ-панель"** для входа в панель управления
+### For Administrators:
+1. Open `index.html`
+2. Click the **"Login"** button in the menu
+3. Enter admin email and password
+4. Click **"Login"**
+5. System automatically detects you're an admin
+6. **"Admin Panel"** button appears in the menu
+7. Click **"Admin Panel"** to access management interface
 
-## ✨ Особенности
+## ✨ Features
 
-### 🔄 Автоматическое определение роли
-- **Обычные пользователи**: Видят только свое имя и кнопку "Выйти"
-- **Администраторы**: Видят свое имя с пометкой "(Админ)" и кнопку "Админ-панель"
+### 🔄 Automatic Role Detection
+- **Regular users**: See only their name and "Logout" button
+- **Administrators**: See their name with "(Admin)" label and "Admin Panel" button
 
-### 🛡️ Безопасность
-- Одна форма входа для всех типов пользователей
-- Система автоматически проверяет права доступа
-- Кнопка "Админ-панель" скрыта от обычных пользователей
+### 🛡️ Security
+- Single login form for all user types
+- System automatically checks access permissions
+- "Admin Panel" button hidden from regular users
 
-### 🎯 Удобство
-- Не нужно запоминать разные способы входа
-- Единый интерфейс для всех пользователей
-- Автоматическое отображение нужных функций
+### 🎯 Convenience
+- No need to remember different login methods
+- Unified interface for all users
+- Automatic display of appropriate functions
 
-## 📋 Пошаговая инструкция
+## 📋 Step-by-Step Instructions
 
-### Создание первого админа:
-1. Откройте `create_admin.html`
-2. Заполните форму создания главного админа
-3. Нажмите "Создать главного админа"
+### Creating the First Admin:
+1. Open `admin.html`
+2. If no admin exists, create the first admin through the interface
+3. Fill out the admin creation form
+4. Click "Create Admin"
 
-### Вход админа:
-1. Откройте `index.html`
-2. Нажмите "Войти"
-3. Введите данные админа
-4. Нажмите "Войти"
-5. Кнопка "Админ-панель" появится автоматически
+### Admin Login:
+1. Open `index.html`
+2. Click "Login"
+3. Enter admin credentials
+4. Click "Login"
+5. "Admin Panel" button appears automatically
 
-### Добавление новых админов:
-1. Войдите как существующий админ
-2. Нажмите "Админ-панель"
-3. Перейдите в раздел "Админы"
-4. Нажмите "Добавить админа"
-5. Заполните данные нового админа
+### Adding New Admins:
+1. Login as existing admin
+2. Click "Admin Panel"
+3. Go to "Admins" section
+4. Click "Add Admin"
+5. Fill out new admin details
 
-## 🚨 Важные моменты
+## 🚨 Important Points
 
-- **Кнопка "Админ-панель"** видна только авторизованным админам
-- **Обычные пользователи** не видят админские функции
-- **Система автоматически** определяет тип пользователя
-- **Один вход** для всех типов пользователей
+- **"Admin Panel" button** is visible only to authenticated admins
+- **Regular users** cannot see admin functions
+- **System automatically** determines user type
+- **Single login** for all user types
 
-## 🔧 Технические детали
+## 🔧 Technical Details
 
-Система работает следующим образом:
-1. Пользователь вводит email и пароль
-2. Система сначала проверяет, является ли это обычным пользователем
-3. Если нет, проверяет, является ли это админом
-4. В зависимости от результата показывает соответствующий интерфейс
-5. Админы видят дополнительную кнопку "Админ-панель"
+The system works as follows:
+1. User enters email and password
+2. System first checks if this is a regular user
+3. If not, checks if this is an admin
+4. Based on result, shows appropriate interface
+5. Admins see additional "Admin Panel" button
+
+## 📝 Test Credentials
+
+Based on `userstest.txt`:
+- **Regular user**: birinmisa15@gmail.com / barni_xxl
+- **Main admin**: 1238355@gmail.com / barni_xxl  
+- **Secondary admin**: 1111@gmail.com / 111111
+
+## 🛠️ Troubleshooting
+
+### Common Issues:
+1. **Can't login**: Check email/password spelling
+2. **Admin panel not showing**: Verify you're logged in as admin
+3. **Data not saving**: Check browser localStorage permissions
+4. **Page not loading**: Ensure all files are in correct directories
+
+### Browser Requirements:
+- Modern browser with localStorage support
+- JavaScript enabled
+- No special plugins required
+
+## 🔒 Security Notes
+
+- Passwords are hashed using simple client-side algorithm
+- Data stored only in browser localStorage
+- No server-side authentication
+- For production use, implement proper server-side security

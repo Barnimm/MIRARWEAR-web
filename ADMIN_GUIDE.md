@@ -1,128 +1,165 @@
-# 👑 Руководство по админ-системе Mirar Wear
+# 👑 Mirar Wear Admin System Guide
 
-## 🚀 Быстрый старт
+## 🚀 Quick Start
 
-### 1. Создание главного админа
-1. Откройте `create_admin.html` в браузере
-2. Заполните форму:
-   - **Имя**: Имя администратора
-   - **Email**: Email для входа
-   - **Пароль**: Пароль (минимум 6 символов)
-   - **Подтверждение пароля**: Повторите пароль
-3. Нажмите "Создать главного админа"
+### 1. Creating the First Admin
+1. Open `admin.html` in your browser
+2. If no admin exists, the system will prompt you to create one
+3. Fill out the form:
+   - **Name**: Administrator name
+   - **Email**: Email for login
+   - **Password**: Password (minimum 6 characters)
+4. Click "Create Admin"
 
-### 2. Вход в админ-панель
-1. Откройте `index.html` (главная страница)
-2. Нажмите кнопку "Войти" в меню
-3. Введите email и пароль главного админа
-4. Нажмите "Войти" - система автоматически определит, что вы админ
-5. Кнопка "Админ-панель" появится в меню
-6. Нажмите "Админ-панель" для входа в панель управления
+### 2. Accessing Admin Panel
+1. Open `index.html` (main page)
+2. Click "Login" button in the menu
+3. Enter admin email and password
+4. Click "Login" - system automatically detects you're an admin
+5. "Admin Panel" button appears in the menu
+6. Click "Admin Panel" to access the management interface
 
-## 🎛️ Функции админ-панели
+## 🎛️ Admin Panel Features
 
-### 📊 Дашборд
-- **Статистика**: Общее количество пользователей, заказов, админов
-- **Последние заказы**: 5 последних заказов
-- **Новые пользователи**: 5 последних зарегистрированных пользователей
+### 📊 Dashboard
+- **Statistics**: Total users, orders, admins count
+- **Recent orders**: Last 5 orders
+- **New users**: Last 5 registered users
+- **Order status breakdown**
 
-### 👥 Управление пользователями
-- **Просмотр всех пользователей** с информацией:
-  - ID пользователя
-  - Имя
+### 👥 User Management
+- **View all users** with information:
+  - User ID
+  - Name
   - Email
-  - Телефон
-  - Дата регистрации
-- **Удаление пользователей** (с подтверждением)
+  - Phone
+  - Registration date
+- **Delete users** (with confirmation)
 
-### 🛒 Управление заказами
-- **Просмотр всех заказов** с информацией:
-  - ID заказа
-  - Данные клиента (имя, email, телефон)
-  - Информация о товаре (ID товара, размер)
-  - Статус заказа
-  - Дата заказа
-- **Изменение статуса заказа**:
-  - Новый
-  - В обработке
-  - Выполнен
-  - Отменен
-- **Удаление заказов** (с подтверждением)
+### 🛒 Order Management
+- **View all orders** with information:
+  - Order ID
+  - Customer data (name, email, phone)
+  - Product information (product ID, size)
+  - Order status
+  - Order date
+- **Change order status**:
+  - New
+  - Processing
+  - Completed
+  - Cancelled
+- **Delete orders** (with confirmation)
 
-### 👑 Управление админами
-- **Просмотр всех админов** с информацией:
-  - ID админа
-  - Имя
+### 🏷️ Product Management
+- **Add new products** with:
+  - Product name and description
+  - Price and quantity
+  - Multiple images upload
+  - Size configuration (S, M, L, XL or single size)
+- **Edit existing products**
+- **Delete products** (with confirmation)
+- **View product gallery** in admin table
+
+### 👑 Admin Management
+- **View all admins** with information:
+  - Admin ID
+  - Name
   - Email
-  - Дата создания
-  - Кто создал админа
-- **Добавление новых админов**:
-  - Имя нового админа
-  - Email для входа
-  - Пароль (минимум 6 символов)
+  - Creation date
+  - Created by
+- **Add new admins**:
+  - Name of new admin
+  - Email for login
+  - Password (minimum 6 characters)
 
-## 🔐 Безопасность
+## 🔐 Security
 
-- **Права доступа**: Только админы могут управлять системой
-- **Хеширование паролей**: Пароли хранятся в зашифрованном виде
-- **Проверка авторизации**: При каждом действии проверяются права доступа
-- **Валидация данных**: Все формы проверяются на корректность
+- **Access control**: Only admins can manage the system
+- **Password hashing**: Passwords stored in encrypted form
+- **Authorization checks**: Every action verifies access rights
+- **Data validation**: All forms are validated for correctness
 
-## 📱 Интерфейс
+## 📱 Interface
 
-### Навигация
-- **Дашборд**: Общая статистика и последние данные
-- **Пользователи**: Управление пользователями
-- **Заказы**: Управление заказами
-- **Админы**: Управление администраторами
+### Navigation
+- **Dashboard**: Overall statistics and recent data
+- **Users**: User management
+- **Orders**: Order management
+- **Products**: Product management
+- **Admins**: Administrator management
 
-### Модальные окна
-- **Изменение статуса заказа**: Выбор нового статуса
-- **Добавление админа**: Форма создания нового админа
+### Modal Windows
+- **Change order status**: Select new status
+- **Add admin**: Form for creating new admin
+- **Add/Edit product**: Product form with image upload
 
-## 🛠️ Технические детали
+## 🛠️ Technical Details
 
-### Хранение данных
-- Все данные сохраняются в `localStorage` браузера
-- **Админы**: `localStorage['mirar_shop_admins']`
-- **Пользователи**: `localStorage['mirar_shop_users']`
-- **Заказы**: `localStorage['mirar_shop_orders']`
-- **Текущий пользователь**: `localStorage['mirar_shop_current_user']`
-- **Никаких серверных файлов** - все работает в браузере
+### Data Storage
+- All data stored in browser `localStorage`
+- **Admins**: `localStorage['mirar_shop_admins']`
+- **Users**: `localStorage['mirar_shop_users']`
+- **Orders**: `localStorage['mirar_shop_orders']`
+- **Products**: `localStorage['mirar_shop_products']`
+- **Current user**: `localStorage['mirar_shop_current_user']`
+- **No server files** - everything works in the browser
 
-### Структура данных админа
+### Admin Data Structure
 ```javascript
 {
-    id: "уникальный_id",
-    name: "Имя админа",
+    id: "unique_id",
+    name: "Admin Name",
     email: "email@example.com",
-    password: "хешированный_пароль",
-    createdBy: "id_создателя",
+    password: "hashed_password",
+    createdBy: "creator_id",
     createdDate: "2024-01-01T00:00:00.000Z"
 }
 ```
 
-## 🚨 Важные замечания
+### Product Data Structure
+```javascript
+{
+    id: "unique_id",
+    name: "Product Name",
+    description: "Product description",
+    price: 100,
+    quantity: 50,
+    oneSize: false,
+    sizes: {
+        S: {enabled: true},
+        M: {enabled: true},
+        L: {enabled: true},
+        XL: {enabled: true}
+    },
+    images: ["data:image/jpeg;base64,...", "data:image/jpeg;base64,..."],
+    createdDate: "2024-01-01T00:00:00.000Z",
+    updatedDate: "2024-01-01T00:00:00.000Z"
+}
+```
 
-1. **Первый админ**: Создается через `create_admin.html` и имеет особые права
-2. **Цепочка админов**: Каждый новый админ создается существующим админом
-3. **Безопасность**: Данные хранятся только в браузере, при очистке данных все будет потеряно
-4. **Демо-версия**: Это демонстрационная система для локального использования
-5. **Никаких серверов**: Все работает в браузере без PHP или других серверных технологий
+## 🚨 Important Notes
 
-## 🔄 Рабочий процесс
+1. **First admin**: Created through admin panel initialization
+2. **Admin chain**: Each new admin is created by an existing admin
+3. **Security**: Data stored only in browser, clearing data will result in loss
+4. **Demo version**: This is a demonstration system for local use
+5. **No servers**: Everything works in browser without PHP or other server technologies
 
-### Типичный сценарий использования:
-1. **Создание главного админа** → `create_admin.html`
-2. **Вход в систему** → Главная страница → "Войти" → ввод данных админа
-3. **Переход в админ-панель** → "Админ-панель" (появляется автоматически)
-4. **Добавление других админов** → Админ-панель → "Админы" → "Добавить админа"
-5. **Управление заказами** → Админ-панель → "Заказы"
-6. **Управление пользователями** → Админ-панель → "Пользователи"
+## 🔄 Workflow
 
-## 📞 Поддержка
+### Typical usage scenario:
+1. **Create first admin** → Admin panel initialization
+2. **Login to system** → Main page → "Login" → enter admin credentials
+3. **Access admin panel** → "Admin Panel" (appears automatically)
+4. **Add other admins** → Admin panel → "Admins" → "Add Admin"
+5. **Manage products** → Admin panel → "Products" → Add/Edit products
+6. **Manage orders** → Admin panel → "Orders"
+7. **Manage users** → Admin panel → "Users"
 
-При возникновении проблем:
-1. Проверьте консоль браузера (F12) на наличие ошибок
-2. Убедитесь, что все файлы загружены корректно
-3. Попробуйте очистить данные браузера и начать заново
+## 📞 Support
+
+If you encounter problems:
+1. Check browser console (F12) for errors
+2. Ensure all files are loaded correctly
+3. Try clearing browser data and starting fresh
+4. Verify localStorage permissions in browser settings
